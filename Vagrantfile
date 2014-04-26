@@ -122,6 +122,10 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder "www/", "/srv/www/", :owner => "www-data", :extra => 'dmode=775,fmode=774'
   end
 
+  # /logs/
+  #
+  config.vm.synced_folder "logs", "/srv/logs/", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+
   # Customfile - POSSIBLY UNSTABLE
   #
   # Use this to insert your own (and possibly rewrite) Vagrant config lines. Helpful
